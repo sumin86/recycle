@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>배화여고 3학년 화반 환경 캠페인</title>
+<style>
+    body {
+        background-image: url('https://github.com/sumin86/recycle/blob/main/paiwha%20school.png?raw=true');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        position: relative;
+        font-family: Arial, sans-serif;
+        overflow: hidden; /* 전체 페이지에서 스크롤 숨김 */
+    }
+    .blurred-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.7); /* 흐림 효과 */
+        z-index: 1; /* 배경 위에 위치 */
+        opacity: 1; /* 초기에는 보임 */
+        transition: opacity 0.5s ease; /* 부드러운 전환 효과 */
+    }
+    button, .image-button {
+        padding: 15px 30px;
+        font-size: 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 10px;
+        z-index: 2; /* 버튼이 흐림 효과 위에 위치 */
+    }
+    button:hover, .image-button:hover {
+        background-color: #45a049;
+    }
+    .image-button {
+        background-size: cover;
+        width: 100px;
+        height: 100px;
+        border: none;
+        display: none; /* 처음에는 숨김 */
+        position: absolute;
+    }
+    #button1 {
+        top: 20px;
+        left: 20px;
+    }
+    #button2 {
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+    }
+    #button3 {
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .text-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 3; /* 텍스트가 버튼 위에 위치 */
+        display: none; /* 처음에는 숨김 */
+        max-height: 80%; /* 최대 높이 설정 */
+        overflow-y: auto; /* 세로 스크롤 가능 */
+        padding: 20px; /* 패딩 추가 */
+        background-color: rgba(255, 255, 255, 0.9); /* 배경색 추가 */
+        border-radius: 10px; /* 모서리 둥글게 */
+    }
+    .text-container h1 {
+        font-size: 36px; /* 큰 텍스트 */
+        font-weight: bold; /* 굵은 글씨 */
+        margin: 0;
+    }
+    .text-container h2 {
+        font-size: 24px; /* 부제목 텍스트 */
+        font-weight: normal; /* 일반 글씨 */
+        margin: 10px 0; /* 위 아래 여백 */
+    }
+    .text-container p {
+        font-size: 18px; /* 설명 텍스트 */
+        margin: 5px 0 0 0;
+    }
+    #backButton {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: none; /* 처음에는 숨김 */
+    }
+</style>
+</head>
+<body>
+<div class="blurred-background"></div> <!-- 흐린 배경 -->
+<button id="startButton" onclick="showImageButtons()">시작하기</button>
+
+<div id="imageButtonsContainer">
+    <button id="button1" class="image-button" style="background-image: url('이미지1_URL_여기에_넣기');" onclick="showText(1)"></button>
+    <button id="button2" class="image-button" style="background-image: url('이미지2_URL_여기에_넣기');" onclick="showText(2)"></button>
+    <button id="button3" class="image-button" style="background-image: url('이미지3_URL_여기에_넣기');" onclick="showText(3)"></button>
+</div>
+
+<div class="text-container" id="textContainer1">
+    <h1>1번 화면 제목</h1>
+    <h2>1번 부제목</h2>
+    <p>1번 화면에 대한 설명입니다. 이곳에 여러 줄의 텍스트가 들어갑니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다.</p>
+</div>
+<div class="text-container" id="textContainer2">
+    <h1>2번 화면 제목</h1>
+    <h2>2번 부제목</h2>
+    <p>2번 화면에 대한 설명입니다. 이곳에 여러 줄의 텍스트가 들어갑니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다.</p>
+</div>
+<div class="text-container" id="textContainer3">
+    <h1>3번 화면 제목</h1>
+    <h2>3번 부제목</h2>
+    <p>3번 화면에 대한 설명입니다. 이곳에 여러 줄의 텍스트가 들어갑니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다.</p>
+</div>
+
+<button id="backButton" onclick="goBack()">돌아가기</button>
+
+<script>
+    function showImageButtons() {
+        document.getElementById('startButton').style.display = 'none'; // 시작하기 버튼 숨기기
+        document.querySelector('.blurred-background').style.opacity = '0'; // 흐림 효과 없애기
+        const buttons = document.querySelectorAll('.image-button');
+        buttons.forEach(button => {
+            button.style.display = 'block'; // 버튼 보이기
+        });
+    }
+
+    function showText(buttonNumber) {
+        // 모든 버튼 숨기기
+        const buttons = document.querySelectorAll('.image-button');
+        buttons.forEach(button => {
+            button.style.display = 'none';
+        });
+        // 모든 텍스트 컨테이너 숨기기
+        const textContainers = document.querySelectorAll('.text-container');
+        textContainers.forEach(container => {
+            container.style.display = 'none';
+        });
+        // 배경 흐림 효과 적용
+        document.querySelector('.blurred-background').style.opacity = '1';
+        // 선택한 버튼 번호에 해당하는 텍스트 컨테이너 보이기
+        document.getElementById(`textContainer${buttonNumber}`).style.display = 'block';
+        // 돌아가기 버튼 보이기
+        document.getElementById('backButton').style.display = 'block';
+    }
+
+    function goBack() {
+        // 모든 버튼 보이기
+        const buttons = document.querySelectorAll('.image-button');
+        buttons.forEach(button => {
+            button.style.display = 'block';
+        });
+        // 모든 텍스트 컨테이너 숨기기
+        const textContainers = document.querySelectorAll('.text-container');
+        textContainers.forEach(container => {
+            container.style.display = 'none';
+        });
+        // 배경 흐림 효과 없애기
+        document.querySelector('.blurred-background').style.opacity = '0';
+        // 돌아가기 버튼 숨기기
+        document.getElementById('backButton').style.display = 'none';
+    }
+</script>
+</body>
+</html>
