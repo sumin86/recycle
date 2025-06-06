@@ -94,6 +94,26 @@
         font-size: 18px; /* 설명 텍스트 */
         margin: 5px 0 0 0;
     }
+    .divider {
+        height: 2px;
+        background-color: #ccc;
+        margin: 20px 0; /* 위 아래 여백 */
+   }
+    .boxes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2열 */
+        gap: 10px; /* 간격 */
+        margin-top: 10px;
+   }
+  .box {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        font-size: 16px;
+   }
+
     #backButton {
         position: absolute;
         bottom: 20px;
@@ -124,6 +144,13 @@
     <p>배달과 포장문화가 우리 일상에 깊숙이 자리잡으면서 일회용품 사용이 자연스러운 일상이 되었다.
         일회용품 사용과 그로 인한 쓰레기 증가로 환경이 무분별하게 파괴되고 있는 현실에서, 발생하는 쓰레기를 막을 수 없다면 올바르게 배출하여 환경 파괴를 최소화하는 것이 중요하다.
         그래서 많은 사람들이 종량제 봉투를 사용하여 쓰레기를 분리배출하고 있지만, 실제로 일반 종량제 봉투로 버려지는 쓰레기의 약 70%가 재활용 가능한 자원임에도 불구하고 잘못된 분리 방법으로 인해 활용이 어려운 경우가 많아, 자원으로 활용 가능함에도 일반쓰레기와 함께 소각·매립되는 재활용품이 여전히 많다.</p>
+  <div class="divider"></div> <!-- 줄 추가 -->
+  <div class="boxes">
+      <div class="box">칸 1</div>
+      <div class="box">칸 2</div>
+      <div class="box">칸 3</div>
+      <div class="box">칸 4</div>
+  </div>
 </div>
 
 <div class="text-container" id="textContainer3">
