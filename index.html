@@ -5,121 +5,129 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>배화여고 3학년 화반 환경 캠페인</title>
 <style>
-    body {
-        background-image: url('https://github.com/sumin86/recycle/blob/main/paiwha%20school.png?raw=true');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        position: relative;
-        font-family: Arial, sans-serif;
-        overflow: hidden; /* 전체 페이지에서 스크롤 숨김 */
-    }
-    .blurred-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(255, 255, 255, 0.7); /* 흐림 효과 */
-        z-index: 1; /* 배경 위에 위치 */
-        opacity: 1; /* 초기에는 보임 */
-        transition: opacity 0.5s ease; /* 부드러운 전환 효과 */
-    }
-    button, .image-button {
-        padding: 15px 30px;
-        font-size: 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        margin: 10px;
-        z-index: 2; /* 버튼이 흐림 효과 위에 위치 */
-    }
-    button:hover, .image-button:hover {
-        background-color: #45a049;
-    }
-    .image-button {
-        background-size: cover;
-        width: 100px;
-        height: 100px;
-        border: none;
-        display: none; /* 처음에는 숨김 */
-        position: absolute;
-    }
-    #button1 {
-        top: 20px;
-        left: 20px;
-    }
-    #button2 {
-        bottom: 20px;
-        left: 20px;
-        transform: translateY(-50%);
-    }
-    #button3 {
-        bottom: 20px;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-    .text-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        z-index: 3; /* 텍스트가 버튼 위에 위치 */
-        display: none; /* 처음에는 숨김 */
-        max-height: 80%; /* 최대 높이 설정 */
-        overflow-y: auto; /* 세로 스크롤 가능 */
-        padding: 20px; /* 패딩 추가 */
-        background-color: rgba(255, 255, 255, 0.9); /* 배경색 추가 */
-        border-radius: 10px; /* 모서리 둥글게 */
-    }
-    .text-container h1 {
-        font-size: 36px; /* 큰 텍스트 */
-        font-weight: bold; /* 굵은 글씨 */
-        margin: 0;
-    }
-    .text-container h2 {
-        font-size: 24px; /* 부제목 텍스트 */
-        font-weight: normal; /* 일반 글씨 */
-        margin: 10px 0; /* 위 아래 여백 */
-    }
-    .text-container p {
-        font-size: 18px; /* 설명 텍스트 */
-        margin: 5px 0 0 0;
-    }
-    .divider {
-        height: 2px;
-        background-color: #ccc;
-        margin: 20px 0; /* 위 아래 여백 */
-   }
-    .boxes {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2열 */
-        gap: 10px; /* 간격 */
-        margin-top: 10px;
-   }
+  body {
+      background-image: url('https://github.com/sumin86/recycle/blob/main/paiwha%20school.png?raw=true');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* 전체 페이지에서 스크롤 숨김 */
+  }
+  .blurred-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.7); /* 흐림 효과 */
+      z-index: 1; /* 배경 위에 위치 */
+      opacity: 1; /* 초기에는 보임 */
+      transition: opacity 0.5s ease; /* 부드러운 전환 효과 */
+  }
+  button, .image-button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 10px;
+      z-index: 2; /* 버튼이 흐림 효과 위에 위치 */
+  }
+  button:hover, .image-button:hover {
+      background-color: #45a049;
+  }
+  .image-button {
+      background-size: cover;
+      width: 100px;
+      height: 100px;
+      border: none;
+      display: none; /* 처음에는 숨김 */
+      position: absolute;
+  }
+  #button1 {
+      top: 20px;
+      left: 20px;
+  }
+  #button2 {
+      bottom: 20px;
+      left: 20px;
+      transform: translateY(-50%);
+  }
+  #button3 {
+      bottom: 20px;
+      left: 50%;
+      transform: translate(-50%, 0);
+  }
+  .text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 3; /* 텍스트가 버튼 위에 위치 */
+      display: none; /* 처음에는 숨김 */
+      max-height: 80%; /* 최대 높이 설정 */
+      overflow-y: auto; /* 세로 스크롤 가능 */
+      padding: 20px; /* 패딩 추가 */
+      background-color: rgba(255, 255, 255, 0.9); /* 배경색 추가 */
+      border-radius: 10px; /* 모서리 둥글게 */
+  }
+  .text-container h1 {
+      font-size: 36px; /* 큰 텍스트 */
+      font-weight: bold; /* 굵은 글씨 */
+      margin: 0;
+  }
+  .text-container h2 {
+      font-size: 24px; /* 부제목 텍스트 */
+      font-weight: normal; /* 일반 글씨 */
+      margin: 10px 0; /* 위 아래 여백 */
+  }
+  .text-container p {
+      font-size: 18px; /* 설명 텍스트 */
+      margin: 5px 0 0 0;
+  }
+  .divider {
+      height: 2px;
+      background-color: #ccc;
+      margin: 20px 0; /* 위 아래 여백 */
+  }
+  .boxes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2열 */
+      gap: 10px; /* 간격 */
+      margin-top: 10px;
+  }
   .box {
-        background-color: #f9f9f9;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px;
-        text-align: center;
-        font-size: 16px;
-   }
-
-    #backButton {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        display: none; /* 처음에는 숨김 */
-    }
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+      font-size: 16px;
+  }
+  .box-title {
+      font-weight: bold; /* 굵은 텍스트 */
+      font-size: 18px; /* 제목 크기 */
+      margin: 0 0 5px 0; /* 아래 여백 */
+  }
+  .box-description {
+      font-size: 14px; /* 설명 텍스트 크기 */
+      margin: 0; /* 여백 없음 */
+  }
+  #backButton {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: none; /* 처음에는 숨김 */
+  }
 </style>
 </head>
 <body>
@@ -127,85 +135,97 @@
 <button id="startButton" onclick="showImageButtons()">시작하기</button>
 
 <div id="imageButtonsContainer">
-    <button id="button1" class="image-button" style="background-image: url('이미지1_URL_여기에_넣기');" onclick="showText(1)"></button>
-    <button id="button2" class="image-button" style="background-image: url('이미지2_URL_여기에_넣기');" onclick="showText(2)"></button>
-    <button id="button3" class="image-button" style="background-image: url('이미지3_URL_여기에_넣기');" onclick="showText(3)"></button>
+  <button id="button1" class="image-button" style="background-image: url('이미지1_URL_여기에_넣기');" onclick="showText(1)"></button>
+  <button id="button2" class="image-button" style="background-image: url('이미지2_URL_여기에_넣기');" onclick="showText(2)"></button>
+  <button id="button3" class="image-button" style="background-image: url('이미지3_URL_여기에_넣기');" onclick="showText(3)"></button>
 </div>
 
 <div class="text-container" id="textContainer1">
-    <h1>1번 화면 제목</h1>
-    <h2>1번 부제목</h2>
-    <p>1번 화면에 대한 설명입니다. 이곳에 여러 줄의 텍스트가 들어갑니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다.</p>
+  <h1>1번 화면 제목</h1>
+  <h2>1번 부제목</h2>
+  <p>1번 화면에 대한 설명입니다. 이곳에 여러 줄의 텍스트가 들어갑니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다.</p>
 </div>
 
 <div class="text-container" id="textContainer2">
-    <h1>올바른 분리수거 방법</h1>
-    <h2>분리배출의 중요성</h2>
-    <p>배달과 포장문화가 우리 일상에 깊숙이 자리잡으면서 일회용품 사용이 자연스러운 일상이 되었다.
-        일회용품 사용과 그로 인한 쓰레기 증가로 환경이 무분별하게 파괴되고 있는 현실에서, 발생하는 쓰레기를 막을 수 없다면 올바르게 배출하여 환경 파괴를 최소화하는 것이 중요하다.
-        그래서 많은 사람들이 종량제 봉투를 사용하여 쓰레기를 분리배출하고 있지만, 실제로 일반 종량제 봉투로 버려지는 쓰레기의 약 70%가 재활용 가능한 자원임에도 불구하고 잘못된 분리 방법으로 인해 활용이 어려운 경우가 많아, 자원으로 활용 가능함에도 일반쓰레기와 함께 소각·매립되는 재활용품이 여전히 많다.</p>
+  <h1>올바른 분리수거 방법</h1>
+  <h2>분리배출의 중요성</h2>
+  <p>배달과 포장문화가 우리 일상에 깊숙이 자리잡으면서 일회용품 사용이 자연스러운 일상이 되었다.
+      일회용품 사용과 그로 인한 쓰레기 증가로 환경이 무분별하게 파괴되고 있는 현실에서, 발생하는 쓰레기를 막을 수 없다면 올바르게 배출하여 환경 파괴를 최소화하는 것이 중요하다.
+      그래서 많은 사람들이 종량제 봉투를 사용하여 쓰레기를 분리배출하고 있지만, 실제로 일반 종량제 봉투로 버려지는 쓰레기의 약 70%가 재활용 가능한 자원임에도 불구하고 잘못된 분리 방법으로 인해 활용이 어려운 경우가 많아, 자원으로 활용 가능함에도 일반쓰레기와 함께 소각·매립되는 재활용품이 여전히 많다.</p>
   <div class="divider"></div> <!-- 줄 추가 -->
   <div class="boxes">
-      <div class="box">칸 1</div>
-      <div class="box">칸 2</div>
-      <div class="box">칸 3</div>
-      <div class="box">칸 4</div>
+      <div class="box">
+          <div class="box-title">칸 1</div>
+          <div class="box-description">칸 1에 대한 설명입니다.</div>
+      </div>
+      <div class="box">
+          <div class="box-title">칸 2</div>
+          <div class="box-description">칸 2에 대한 설명입니다.</div>
+      </div>
+      <div class="box">
+          <div class="box-title">칸 3</div>
+          <div class="box-description">칸 3에 대한 설명입니다.</div>
+      </div>
+      <div class="box">
+          <div class="box-title">칸 4</div>
+          <div class="box-description">칸 4에 대한 설명입니다.</div>
+      </div>
   </div>
 </div>
 
 <div class="text-container" id="textContainer3">
-    <h1>3번 화면 제목</h1>
-    <h2>3번 부제목</h2>
-    <p>3번 화면에 대한 설명입니다. 이곳에 여러 줄의 텍스트가 들어갑니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다.</p>
+  <h1>3번 화면 제목</h1>
+  <h2>3번 부제목</h2>
+  <p>3번 화면에 대한 설명입니다. 이곳에 여러 줄의 텍스트가 들어갑니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다. 이 텍스트는 스크롤을 통해 확인할 수 있습니다.</p>
 </div>
 
 <button id="backButton" onclick="goBack()">돌아가기</button>
 
 <script>
-    function showImageButtons() {
-        document.getElementById('startButton').style.display = 'none'; // 시작하기 버튼 숨기기
-        document.querySelector('.blurred-background').style.opacity = '0'; // 흐림 효과 없애기
-        const buttons = document.querySelectorAll('.image-button');
-        buttons.forEach(button => {
-            button.style.display = 'block'; // 버튼 보이기
-        });
-    }
+  function showImageButtons() {
+      document.getElementById('startButton').style.display = 'none'; // 시작하기 버튼 숨기기
+      document.querySelector('.blurred-background').style.opacity = '0'; // 흐림 효과 없애기
+      const buttons = document.querySelectorAll('.image-button');
+      buttons.forEach(button => {
+          button.style.display = 'block'; // 버튼 보이기
+      });
+  }
 
-    function showText(buttonNumber) {
-        // 모든 버튼 숨기기
-        const buttons = document.querySelectorAll('.image-button');
-        buttons.forEach(button => {
-            button.style.display = 'none';
-        });
-        // 모든 텍스트 컨테이너 숨기기
-        const textContainers = document.querySelectorAll('.text-container');
-        textContainers.forEach(container => {
-            container.style.display = 'none';
-        });
-        // 배경 흐림 효과 적용
-        document.querySelector('.blurred-background').style.opacity = '1';
-        // 선택한 버튼 번호에 해당하는 텍스트 컨테이너 보이기
-        document.getElementById(`textContainer${buttonNumber}`).style.display = 'block';
-        // 돌아가기 버튼 보이기
-        document.getElementById('backButton').style.display = 'block';
-    }
+  function showText(buttonNumber) {
+      // 모든 버튼 숨기기
+      const buttons = document.querySelectorAll('.image-button');
+      buttons.forEach(button => {
+          button.style.display = 'none';
+      });
+      // 모든 텍스트 컨테이너 숨기기
+      const textContainers = document.querySelectorAll('.text-container');
+      textContainers.forEach(container => {
+          container.style.display = 'none';
+      });
+      // 배경 흐림 효과 적용
+      document.querySelector('.blurred-background').style.opacity = '1';
+      // 선택한 버튼 번호에 해당하는 텍스트 컨테이너 보이기
+      document.getElementById(`textContainer${buttonNumber}`).style.display = 'block';
+      // 돌아가기 버튼 보이기
+      document.getElementById('backButton').style.display = 'block';
+  }
 
-    function goBack() {
-        // 모든 버튼 보이기
-        const buttons = document.querySelectorAll('.image-button');
-        buttons.forEach(button => {
-            button.style.display = 'block';
-        });
-        // 모든 텍스트 컨테이너 숨기기
-        const textContainers = document.querySelectorAll('.text-container');
-        textContainers.forEach(container => {
-            container.style.display = 'none';
-        });
-        // 배경 흐림 효과 없애기
-        document.querySelector('.blurred-background').style.opacity = '0';
-        // 돌아가기 버튼 숨기기
-        document.getElementById('backButton').style.display = 'none';
-    }
+  function goBack() {
+      // 모든 버튼 보이기
+      const buttons = document.querySelectorAll('.image-button');
+      buttons.forEach(button => {
+          button.style.display = 'block';
+      });
+      // 모든 텍스트 컨테이너 숨기기
+      const textContainers = document.querySelectorAll('.text-container');
+      textContainers.forEach(container => {
+          container.style.display = 'none';
+      });
+      // 배경 흐림 효과 없애기
+      document.querySelector('.blurred-background').style.opacity = '0';
+      // 돌아가기 버튼 숨기기
+      document.getElementById('backButton').style.display = 'none';
+  }
 </script>
 </body>
 </html>
